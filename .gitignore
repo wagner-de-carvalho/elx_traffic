@@ -35,3 +35,6 @@ elx_traffic-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# dev only
+.iex.exs
+
