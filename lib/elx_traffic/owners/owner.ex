@@ -29,5 +29,6 @@ defmodule ElxTraffic.Owners.Owner do
     |> validate_length(:email, max: 255)
     |> validate_length(:phone, max: 15)
     |> unique_constraint(:license_plate)
+    |> validate_format(:email, ~r/@/)
   end
 end

@@ -32,6 +32,7 @@ defmodule ElxTraffic.Vehicles.Vehicle do
     |> validate_length(:brand, max: 20)
     |> validate_length(:model, max: 20)
     |> unique_constraint(:license_plate)
+    |> validate_format(:license_plate, ~r/[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/)
     |> foreign_key_constraint(:owner_id)
   end
 end
