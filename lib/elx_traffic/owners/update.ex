@@ -4,6 +4,7 @@ defmodule ElxTraffic.Owners.Update do
   """
   alias ElxTraffic.Owners.Get
   alias ElxTraffic.Owners.Owner
+  alias ElxTraffic.Repo
 
   def call(%{id: id} = params) do
     id
