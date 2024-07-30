@@ -21,8 +21,8 @@ defmodule ElxTraffic.Owners.Owner do
     timestamps(type: :utc_datetime)
   end
 
-  def changeset(struct \\ %__MODULE__{}, attrs) do
-    struct
+  def changeset(owner \\ %__MODULE__{}, attrs) do
+    owner
     |> cast(attrs, @fields)
     |> validate_required(@required)
     |> validate_length(:name, max: 30)

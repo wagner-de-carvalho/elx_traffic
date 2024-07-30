@@ -5,6 +5,7 @@ defmodule ElxTraffic.Vehicles.Vehicle do
   use Ecto.Schema
   import Ecto.Changeset
   alias ElxTraffic.Owners.Owner
+  alias ElxTraffic.TrafficViolations.TrafficViolation
 
   @fields ~w/brand license_plate model owner_id/a
   @required @fields
@@ -20,6 +21,7 @@ defmodule ElxTraffic.Vehicles.Vehicle do
     field :status, Ecto.Enum, values: [:regular, :seized], default: :regular
 
     belongs_to :owner, Owner
+    has_many :traffic_violations, TrafficViolation
 
     timestamps(type: :utc_datetime)
   end
