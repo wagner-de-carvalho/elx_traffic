@@ -18,6 +18,8 @@ defmodule ElxTrafficWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live("/owners", OwnersLive)
   end
 
   # Other scopes may use custom stacks.
