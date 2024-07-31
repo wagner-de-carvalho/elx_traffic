@@ -9,6 +9,8 @@ defmodule ElxTraffic.Vehicles.Update do
   alias ElxTraffic.Repo
 
   def call(%{id: id} = params) do
+    IO.inspect(params, label: "UPDATE PARAMS >>")
+
     id
     |> Get.call()
     |> then(fn
@@ -18,6 +20,8 @@ defmodule ElxTraffic.Vehicles.Update do
   end
 
   defp update(vehicle, params) do
+    IO.inspect(params, label: "DEFP PARAMS")
+
     vehicle
     |> Vehicle.changeset(params)
     |> Repo.update()

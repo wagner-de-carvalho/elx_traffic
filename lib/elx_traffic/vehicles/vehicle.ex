@@ -7,8 +7,8 @@ defmodule ElxTraffic.Vehicles.Vehicle do
   alias ElxTraffic.Owners.Owner
   alias ElxTraffic.TrafficViolations.TrafficViolation
 
-  @fields ~w/brand license_plate model owner_id/a
-  @required @fields
+  @fields ~w/brand license_plate model owner_id seize_date status/a
+  @required @fields -- [:seize_date]
 
   @timestamps_opts [type: :utc_datetime]
 
