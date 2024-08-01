@@ -20,6 +20,8 @@ defmodule ElxTrafficWeb.Router do
     get "/", PageController, :home
 
     live("/owners", OwnersLive)
+    live("/traffic_violations", TrafficViolationsLive)
+    live("/vehicles", VehiclesLive)
   end
 
   # Other scopes may use custom stacks.
