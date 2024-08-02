@@ -34,20 +34,27 @@ defmodule ElxTrafficWeb.OwnersLive do
           </tr>
         </thead>
         <tbody>
-          <tr :for={owner <- @owners} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              <%= owner.name %>
-            </th>
-            <td class="px-6 py-4">
-              <%= owner.email %>
-            </td>
-            <td class="px-6 py-4">
-              <%= owner.phone %>
-            </td>
-          </tr>
+          <div :for={owner <- @owners}>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                <%= owner.name %>
+              </th>
+              <td class="px-6 py-4">
+                <%= owner.email %>
+              </td>
+              <td class="px-6 py-4">
+                <%= owner.phone %>
+              </td>
+              <td class="px-6 py-4">
+                <.link navigate={~p"/vehicles?#{[id: owner]}"}>
+                  <img src={~p"/images/truck.svg"} height="18" width="20" />
+                </.link>
+              </td>
+            </tr>
+          </div>
         </tbody>
       </table>
     </div>
