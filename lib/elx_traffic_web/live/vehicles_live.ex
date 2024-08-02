@@ -8,7 +8,7 @@ defmodule ElxTrafficWeb.VehiclesLive do
   @impl Phoenix.LiveView
   def mount(_params, _session, socket) do
     vehicles = Vehicles.list()
-    socket = assign(socket, vehicles: vehicles)
+    socket = assign(socket, vehicles: vehicles, page_title: "Vehicles")
     {:ok, socket}
   end
 

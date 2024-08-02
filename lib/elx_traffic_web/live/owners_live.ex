@@ -8,7 +8,7 @@ defmodule ElxTrafficWeb.OwnersLive do
   @impl Phoenix.LiveView
   def mount(_params, _session, socket) do
     owners = Owners.list()
-    socket = assign(socket, owners: owners)
+    socket = assign(socket, owners: owners, page_title: "Owners")
     {:ok, socket}
   end
 
