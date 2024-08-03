@@ -54,7 +54,7 @@ defmodule ElxTrafficWeb.VehiclesLive do
               <%= vehicle.license_plate %>
             </td>
             <td class="px-5 py-3 text-left">
-              <%= vehicle.brand %>
+              <%= vehicle.brand |> String.split(" ") |> List.first() %>
             </td>
             <td class="px-5 py-3 text-left">
               <%= vehicle.model %>
