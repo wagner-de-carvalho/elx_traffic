@@ -17,8 +17,7 @@ defmodule ElxTrafficWeb.Router do
   scope "/", ElxTrafficWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
-
+    live("/", OwnersLive)
     live("/owners", OwnersLive)
     live("/traffic_violations", TrafficViolationsLive)
     live("/vehicles", VehiclesLive)
