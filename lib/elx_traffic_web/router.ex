@@ -19,8 +19,13 @@ defmodule ElxTrafficWeb.Router do
 
     live("/", OwnersLive)
     live("/owners", OwnersLive)
+    live("/owners/new", OwnersLive, :new)
     live("/traffic_violations", TrafficViolationsLive)
     live("/vehicles", VehiclesLive)
+
+    # live "/articles", ArticleLive.Index, :index
+    # live "/articles/new", ArticleLive.Index, :new
+    # live "/articles/:id/edit", ArticleLive.Index, :edit
   end
 
   # Other scopes may use custom stacks.
